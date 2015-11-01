@@ -1,6 +1,6 @@
-# DFM (WIP)
+# HIM (WIP)
 
-Manage and reload you dotfiles in a specific directory
+Hidden Is Manageable - Manage and reload you dotfiles in a specific directory
 
 ###SPECS
 
