@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+# PATH_TO_GEMSET/hfam-VERSION/lib
+hfam_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+# add hfam_dir to LOAD_PATH
+$LOAD_PATH.unshift(hfam_dir) unless $LOAD_PATH.include?(hfam_dir)
+
+require "hfam"
+
+options = HFAM::ArgumentsParser.new.parse
+
+if options.keys.include? :help
+  puts options[:help]
+  exit(1)
+end

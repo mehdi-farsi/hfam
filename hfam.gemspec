@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'him'
+require 'hfam'
 
 Gem::Specification.new do |spec|
-  spec.name          = "him"
-  spec.version       = Him::VERSION
+  spec.name          = "hfam"
+  spec.version       = HFAM::VERSION
   spec.authors       = ["mehdi_farsi"]
   spec.date          = Time.now.strftime("%F")
   spec.email         = ["mehdifarsi.pro@gmail.com"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = ""
   spec.license       = "MIT"
 
-  spec.files         = %w{lib/him.rb lib/him/version.rb lib/him/arguments_parser.rb}
+  spec.files         = %w{lib/hfam.rb lib/hfam/version.rb lib/hfam/arguments_parser.rb}
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   

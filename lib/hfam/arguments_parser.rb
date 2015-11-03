@@ -1,6 +1,6 @@
 require 'optparse'
 
-module Him
+module HFAM
   class ArgumentsParser
     def parse
       options = {}
@@ -13,7 +13,7 @@ module Him
           options[:help] = <<-EOF
 dotfile-manager options:
 
-him [-a[ll]]
+hfam [-a[ll]]
     [--pick FILE1,FILE2,... [-p[ath] PATH_TO_DOTFILES]]
     [-p[ath] PATH_TO_DOTFILES]
     [-e[dit] EDITOR=YOUR_EDITOR [-p[ath] PATH_TO_DOTFILES]]
