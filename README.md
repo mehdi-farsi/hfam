@@ -1,16 +1,16 @@
-# HIM (WIP)
+# HFAM (WIP)
 
-Hidden Is Manageable - Manage and reload you dotfiles in a specific directory
+Hidden files Are Manageable - Manage and reload you dotfiles in a specific directory
 
 ###SPECS
 
 all dotfiles have to be in a ~/dotfiles directory 
 
 ```shell
-$> him --help
+$> hfam --help
 dotfile-manager options:
 
-him [-a[ll]]
+hfam [-a[ll]]
     [--pick FILE1,FILE2,... [-p[ath] PATH_TO_DOTFILES]]
     [-p[ath] PATH_TO_DOTFILES]
     [-e[dit] EDITOR=YOUR_EDITOR [-p[ath] PATH_TO_DOTFILES]]
