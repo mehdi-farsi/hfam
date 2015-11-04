@@ -1,6 +1,6 @@
 # HFAM (WIP)
 
-Hidden files Are Manageable - Manage and reload you dotfiles in a specific directory
+<b>H</b>idden <b>F</b>iles <b>A</b>re <b>M</b>anageable - Manage and reload you dotfiles in a specific directory
 
 ###SPECS
 
