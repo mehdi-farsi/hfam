@@ -1,0 +1,1 @@
+Dir.glob("./lib/hfam/source_files/*").each { |source_file| require source_file }

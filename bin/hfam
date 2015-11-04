@@ -8,9 +8,4 @@ $LOAD_PATH.unshift(hfam_dir) unless $LOAD_PATH.include?(hfam_dir)
 
 require "hfam"
 
-options = HFAM::ArgumentsParser.new.parse
-
-if options.keys.include? :help
-  puts options[:help]
-  exit(1)
-end
+HFAM::Command.new

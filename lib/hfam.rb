@@ -1,2 +1,3 @@
 require "hfam/version"
-require "hfam/arguments_parser.rb"
+require "hfam/argument_parser.rb"
+require "hfam/command.rb"

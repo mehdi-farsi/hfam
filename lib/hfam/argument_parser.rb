@@ -1,7 +1,7 @@
 require 'optparse'
 
 module HFAM
-  class ArgumentsParser
+  class ArgumentParser
     def parse
       options = {}
 
