@@ -15,10 +15,5 @@ module HFAM
       end
     end
 
-  private
-   def log_error(command)
-    ::HFAM::Logger.error("Unknown command '#{command[1][:command]}' with args #{command[1][:args]}")
-    true
-   end
   end
 end

@@ -3,6 +3,12 @@ module HFAM
     class << self
       def success(message)
         puts message.green
+        true
+      end
+
+      def warn(message)
+        puts message.orange
+        true
       end
 
       def error(message)
