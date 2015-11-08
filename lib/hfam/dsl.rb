@@ -13,6 +13,11 @@ module HFAM
       @payload.commands << [:symlink, "#{DEFAULT_DOTFILE_PATH}/#{file}"]
     end
 
+    def source(file)
+      symlink(file)
+      @payload.commands << [:source, "#{DEFAULT_DOTFILE_PATH}/#{file}"]
+    end
+
     def route
       @command_set.run_command
     end
