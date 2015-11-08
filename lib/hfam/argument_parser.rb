@@ -1,4 +1,4 @@
-require 'optparse'
+require "optparse"
 
 module HFAM
   class ArgumentParser
@@ -6,23 +6,11 @@ module HFAM
       options = {}
 
       o = ::OptionParser.new do |opts|
-        opts.banner = "usage: wc [-clhmw] [file ...]"
+        opts.banner = ::HFAM::HELP
         
 
         opts.on("-h") do |h|
-          options[:help] = <<-EOF
-dotfile-manager options:
-
-hfam [-a[ll]]
-    [--pick FILE1,FILE2,... [-p[ath] PATH_TO_DOTFILES]]
-    [-p[ath] PATH_TO_DOTFILES]
-    [-e[dit] EDITOR=YOUR_EDITOR [-p[ath] PATH_TO_DOTFILES]]
-
--a --all  # execute the right command for each dotfile [DEFAULT OPTION]
---pick    # execute the command for the selected files
--p --path # custom dotfiles path
--e --edit # open the dotfiles directory with the editor set in $EDITOR. It work with --path option
-          EOF
+          options[:help] = ::HFAM::HELP
         end
       end
     begin
@@ -32,7 +20,6 @@ hfam [-a[ll]]
       $stderr.puts o.banner
       exit
     end
-    # TODO: ugly code to refactor :(
       options
     end
   end

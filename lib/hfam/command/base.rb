@@ -1,5 +1,5 @@
 module HFAM
-  module SourceFile
+  module Command
     class Base
     end
   end
