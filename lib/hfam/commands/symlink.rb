@@ -14,7 +14,6 @@ module HFAM
         file = ::FileUtils.hidden_file?(file) ? file : ".#{file}"
         dest = command[2] || "#{::HFAM::HOME}/#{file}"
 
-        
         # ln -s with --force option
         ::FileUtils.ln_sf(src, dest)
 

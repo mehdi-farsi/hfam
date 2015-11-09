@@ -1,6 +1,4 @@
 module HFAM
-  BLANKSLATE_WHITELISTED_METHODS = [:allocate, :eval, :__id__, :object_id, :__send__]
-
   HOME                 = "#{ENV['HOME']}"
   DEFAULT_DOTFILE_PATH = "#{ENV['HOME']}/dotfiles"
   HFAMCONFIG_PATH      = "#{DEFAULT_DOTFILE_PATH}/.hfamconfig"
@@ -8,18 +6,19 @@ module HFAM
   HELP = <<-SHELL
 HFAM - Hidden Files Are Manageable
 
+Centralize your dotfiles in one directory and manage them using some basic operations (symlink, source, ...)
+This tool attempts to locate a ~/dotfiles/.hfamconfig file. Then it executes a set of commands
+listed in the config file.
+
+For further information: https://github.com/mehdi-farsi/hfam
+
 USAGE:
 
-hfam [-a[ll]]
-    [--pick FILE1,FILE2,... [-p[ath] PATH_TO_DOTFILES]]
-    [-p[ath] PATH_TO_DOTFILES]
-    [-e[dit] EDITOR=YOUR_EDITOR [-p[ath] PATH_TO_DOTFILES]]
+hfam [-h]
 
 OPTIONS:
 
--a --all  # execute the right command for each dotfile [DEFAULT OPTION]
---pick    # execute the command for the selected files
--p --path # custom dotfiles path
--e --edit # open the dotfiles directory with the editor set in $EDITOR. It work with --path option
+-h  # help
+
 SHELL
 end
