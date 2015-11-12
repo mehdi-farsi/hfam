@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Hidden Files Are Manageable}
   spec.description   = %q{Manage and reload you dotfiles in a centralized directory}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/mehdi-farsi/hfam"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
