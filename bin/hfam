@@ -8,4 +8,4 @@ $LOAD_PATH.unshift(hfam_dir) unless $LOAD_PATH.include?(hfam_dir)
 
 require "hfam"
 
-HFAM::Command.new
+HFAM::Application.new.run
