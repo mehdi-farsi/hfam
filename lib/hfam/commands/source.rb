@@ -17,7 +17,7 @@ module HFAM
 
         # https://wiki.ubuntu.com/DashAsBinSh#My_production_system_has_broken_and_I_just_want_to_get_it_back_up.21
         # Sometime the default shell /bin/sh is a symlink to another shell
-        # Pathname#realpath permits to get the target of a symlink 
+        # Pathname#realpath permits to reach the target of a symlink 
         real_shell_path = ::Pathname.new(ENV['SHELL']).realpath.to_s
 
         # /bin/dash doesn't implement the builtin 'source'. Instead, it uses the '.' command
