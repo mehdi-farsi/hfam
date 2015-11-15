@@ -9,13 +9,13 @@ module HFAM
       raw_commands = eval(::File.open(::HFAM::HFAMCONFIG_PATH).read)
     end
 
-    def symlink(file)
-      @payload.commands << [:symlink, "#{DEFAULT_DOTFILE_PATH}/#{file}"]
+    def symlink(file, options = {})
+      @payload.commands << [:symlink, "#{DEFAULT_DOTFILE_PATH}/#{file}", dest_path(file, options)]
     end
 
-    def source(file)
+    def source(file, options = {})
       symlink(file)
-      @payload.commands << [:source, "#{DEFAULT_DOTFILE_PATH}/#{file}"]
+      @payload.commands << [:source, "#{DEFAULT_DOTFILE_PATH}/#{file}", dest_path(file, options)]
     end
 
     def route
@@ -24,6 +24,10 @@ module HFAM
 
     def method_missing(method, *args, &block)
       @payload.commands << [:unknown, { command: method, args: args }]
+    end
+
+    def dest_path(file, options = {})
+      options.include?(:dest) ? options[:dest] : ::HFAM::HOME
     end
   end
 end

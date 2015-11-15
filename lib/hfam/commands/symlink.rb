@@ -12,7 +12,7 @@ module HFAM
         # preprend the dest file with a '.' if the src file is not a hidden file 
         file = src.split('/').last
         file = ::FileUtils.hidden_file?(file) ? file : ".#{file}"
-        dest = command[2] || "#{::HFAM::HOME}/#{file}"
+        dest = "#{command[2]}/#{file}"
 
         # ln -s with --force option
         ::FileUtils.ln_sf(src, dest)
