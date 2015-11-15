@@ -13,7 +13,7 @@ module HFAM
         # preprend the dest file with a '.' if the src file is not a hidden file 
         file = src.split('/').last
         file = ::FileUtils.hidden_file?(file) ? file : ".#{file}"
-        dest = command[2] || "#{::HFAM::HOME}/#{file}"
+        dest = "#{command[2]}/#{file}"
 
         # https://wiki.ubuntu.com/DashAsBinSh#My_production_system_has_broken_and_I_just_want_to_get_it_back_up.21
         # Sometime the default shell /bin/sh is a symlink to another shell
@@ -25,7 +25,7 @@ module HFAM
 
         (cmd = "#{real_shell_path} -c '#{cmd} #{dest}'") && result = `#{cmd}`
 
-        ::HFAM::Logger.success("Source: Command result: #{result}")
+        ::HFAM::Logger.success(result)
         ::HFAM::Logger.success("Source: #{cmd}")
 
       rescue ::Errno::EACCES => e
