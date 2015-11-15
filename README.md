@@ -69,7 +69,7 @@ In `$HOME/dotfiles/.hfamconfig`
 symlink "gitconfig" # you can add a comment using '#'
 ```
 
-And then
+Then
 
 ```shell
 ?> hfam
@@ -78,6 +78,20 @@ Symlink: ln -s /Users/zoidberg/dotfiles/gitconfig /Users/zoidberg/.gitconfig
 /Users/zoidberg/.gitconfig -> /Users/zoidberg/dotfiles/gitconfig
 ```
 
+The `symlink` command accepts another argument to specify the destination's directory of the symlink. This arguments is named `dest`.
+
+Example:
+
+```ruby
+symlink "gitignore", dest: "/Users/zoidberg/apps/my_app/.gitignore"
+```
+
+Then
+
+```shell
+?> hfam
+Symlink: ln -s /Users/mehdi/dotfiles/gitignore /Users/zoidberg/apps/my_app/.gitignore
+```
 
 > /!\ If the source file is not a dotfile, the prefix `.` is automatically prepended to the target file
 > ```shell
@@ -97,7 +111,7 @@ In `$HOME/dotfiles/.hfamconfig`
 source "zshrc"
 ```
 
-And then
+Then
 
 ```shell
 ?> hfam
