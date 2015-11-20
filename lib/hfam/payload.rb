@@ -8,6 +8,14 @@ module HFAM
       self[:commands] = Array.new { |value| [:unknown, value] }
     end
 
+    def help_option?
+      !!metadata[:help]
+    end
+
+    def help_message
+      metadata[:help]
+    end
+
     def metadata
       self[:metadata]
     end
