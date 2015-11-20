@@ -59,7 +59,7 @@ Now, let's have look to the `.hfamconfig` DSL.
 
 ####Symlink
 
-The `symlink` command creates a symlink with the source file passed as argument. The symlink target is defined in `$HOME/.target`.
+The `symlink` command creates a symlink with the source file passed as argument. The symlink target is created in `$HOME/.target`.
 
 Example:
 
@@ -78,7 +78,7 @@ Symlink: ln -s /Users/zoidberg/dotfiles/gitconfig /Users/zoidberg/.gitconfig
 /Users/zoidberg/.gitconfig -> /Users/zoidberg/dotfiles/gitconfig
 ```
 
-The `symlink` command accepts another argument to specify the destination's directory of the symlink. This arguments is named `dest`.
+The `symlink` command accepts another argument to specify the destination's directory. This arguments is named `dest`.
 
 Example:
 
