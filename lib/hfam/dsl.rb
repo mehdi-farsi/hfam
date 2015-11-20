@@ -6,16 +6,16 @@ module HFAM
     end
 
     def tokenize
-      raw_commands = eval(::File.open(::HFAM::HFAMCONFIG_PATH).read)
+      raw_commands = eval(::File.open("#{dotfiles_path}/.hfamconfig").read)
     end
 
     def symlink(file, options = {})
-      @payload.commands << [:symlink, "#{DEFAULT_DOTFILE_PATH}/#{file}", dest_path(file, options)]
+      @payload.commands << [:symlink, "#{dotfiles_path}/#{file}", dest_path(file, options)]
     end
 
     def source(file, options = {})
       symlink(file)
-      @payload.commands << [:source, "#{DEFAULT_DOTFILE_PATH}/#{file}", dest_path(file, options)]
+      @payload.commands << [:source, "#{dotfiles_path}/#{file}", dest_path(file, options)]
     end
 
     def route
@@ -24,6 +24,11 @@ module HFAM
 
     def method_missing(method, *args, &block)
       @payload.commands << [:unknown, { command: method, args: args }]
+    end
+
+  private
+    def dotfiles_path
+      @payload.metadata[:path] || DEFAULT_DOTFILES_PATH
     end
 
     def dest_path(file, options = {})
