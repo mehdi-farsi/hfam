@@ -6,12 +6,17 @@ module HFAM
       options = {}
 
       o = ::OptionParser.new do |opts|
+
         opts.banner = ::HFAM::HELP
         
-
-        opts.on("-h") do |h|
+        opts.on("-h", "--help") do |h|
           options[:help] = ::HFAM::HELP
         end
+
+        opts.on("-p=PATH", "--path=PATH") do |p|
+          options[:path] = p
+        end
+
       end
     begin
       o.parse!
