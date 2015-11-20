@@ -45,6 +45,26 @@ Example
      |- .hfamconfig
 ```
 
+###Options
+
+Option `-h --help`
+
+Display usage:
+
+```shell
+?> hfam --help
+
+```
+
+Option `-p --path`
+
+```shell
+?> hfam --path /Users/zoidberg/Documents/dotfiles
+Symlink: ln -s /Users/mehdi/Documents/dotfiles/testpath /Users/zoidberg/Documents/.testpath
+```
+
+> The path set by --path option is the default symlink target path.
+> use the DSL symlink option `:dest` to override this path.
 
 `hfam` works with a `.hfamconfig` file. This config file provide an intuitive DSL for managing your dotfiles.
 
