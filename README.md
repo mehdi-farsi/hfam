@@ -2,8 +2,8 @@
 
 <b>H</b>idden <b>F</b>iles <b>A</b>re <b>M</b>anageable - Manage, source and reload you dotfiles in a specific directory
 
-1. You create/clone your `dotfiles` directory defined in `$HOME/`. 
-2. You edit a `$HOME/dotfiles/.hfamconfig` with its intuitive DSL.
+1. You create/clone your `dotfiles`. 
+2. You edit a `dotfiles/.hfamconfig` file with its intuitive DSL.
 3. You call `hfam`.
 
 The main advantage of this tool is that you can easily move your `dotfiles` from a machine to another one. Then, with only one command, you can configure your environment.
@@ -45,26 +45,45 @@ Example
      |- .hfamconfig
 ```
 
-###Options
+####Options
 
 Option `-h --help`
 
-Display usage:
+Display the usage:
 
 ```shell
 ?> hfam --help
+HFAM - Hidden Files Are Manageable
 
+Centralize your dotfiles in one directory and manage them using some basic operations (symlink, source, ...)
+This tool attempts to locate a ~/dotfiles/.hfamconfig file. Then it executes a set of commands
+listed in the config file.
+
+For further information: https://github.com/mehdi-farsi/hfam
+
+USAGE:
+
+hfam [-h|--help] [-p|--path]
+
+OPTIONS:
+
+-h  # help
+-p  # change the default dotfiles path
 ```
 
 Option `-p --path`
 
+Change the default dotfiles path.
+
 ```shell
 ?> hfam --path /Users/zoidberg/Documents/dotfiles
-Symlink: ln -s /Users/mehdi/Documents/dotfiles/testpath /Users/zoidberg/Documents/.testpath
+Symlink: ln -s /Users/mehdi/Documents/dotfiles/testpath /Users/zoidberg/Documents/dotfiles/.testpath
 ```
 
 > The path set by --path option is the default symlink target path.
 > use the DSL symlink option `:dest` to override this path.
+
+####Hfamconfig
 
 `hfam` works with a `.hfamconfig` file. This config file provide an intuitive DSL for managing your dotfiles.
 
@@ -77,7 +96,7 @@ For the following examples, let's say that the following environment variables a
 
 Now, let's have look to the `.hfamconfig` DSL.
 
-####Symlink
+#####Symlink
 
 The `symlink` command creates a symlink with the source file passed as argument. The symlink target is created in `$HOME/.target`.
 
@@ -119,7 +138,7 @@ Symlink: ln -s /Users/mehdi/dotfiles/gitignore /Users/zoidberg/apps/my_app/.giti
 > lrwxr-xr-x  1 lol  cat 27B Nov 11 16:35 .gitconfig -> /Users/zoidberg/dotfiles/gitconfig
 > ```
 
-####Source
+#####Source
 
 The `source` command creates a symlink using the file passed as argument and source the symlink target. The symlink target file is defined at `$HOME/.target`.
 
