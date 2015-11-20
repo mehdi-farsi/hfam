@@ -24,6 +24,9 @@ module HFAM
       $stderr.puts e
       $stderr.puts o.banner
       exit
+    rescue ::OptionParser::MissingArgument => e
+      $stderr.puts e
+      exit
     end
       options
     end
