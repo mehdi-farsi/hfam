@@ -1,7 +1,6 @@
 module HFAM
-  HOME                 = "#{ENV['HOME']}"
-  DEFAULT_DOTFILE_PATH = "#{ENV['HOME']}/dotfiles"
-  HFAMCONFIG_PATH      = "#{DEFAULT_DOTFILE_PATH}/.hfamconfig"
+  HOME                  = "#{ENV['HOME']}"
+  DEFAULT_DOTFILES_PATH = "#{ENV['HOME']}/dotfiles"
 
   HELP = <<-SHELL
 HFAM - Hidden Files Are Manageable
@@ -14,11 +13,11 @@ For further information: https://github.com/mehdi-farsi/hfam
 
 USAGE:
 
-hfam [-h]
+hfam [-h|--help] [-p|--path]
 
 OPTIONS:
 
 -h  # help
-
+-p  # change the default dotfiles path
 SHELL
 end

@@ -9,8 +9,8 @@ module HFAM
     end
 
     def run
-      if @payload.metadata.include? :help
-        puts @payload.metadata[:help]
+      if @payload.help_option?
+        puts @payload.help_message
         return
       end
 
