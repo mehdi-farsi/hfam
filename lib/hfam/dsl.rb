@@ -10,12 +10,12 @@ module HFAM
     end
 
     def symlink(file, options = {})
-      @payload.commands << [:symlink, "#{dotfiles_path}/#{file}", dest_path(file, options)]
+      @payload.commands << [:symlink, "#{dotfiles_path}/#{file}", dest_path(options)]
     end
 
     def source(file, options = {})
       symlink(file)
-      @payload.commands << [:source, "#{dotfiles_path}/#{file}", dest_path(file, options)]
+      @payload.commands << [:source, "#{dotfiles_path}/#{file}", dest_path(options)]
     end
 
     def route
@@ -28,11 +28,13 @@ module HFAM
 
   private
     def dotfiles_path
-      @payload.metadata[:path] || DEFAULT_DOTFILES_PATH
+      # File::expand_path convert the builtin "~/" to the path defined in ENV["HOME"]
+      File.expand_path(@payload.metadata[:path] || DEFAULT_DOTFILES_PATH)
     end
 
-    def dest_path(file, options = {})
-      options.include?(:dest) ? options[:dest] : ::HFAM::HOME
+    def dest_path(options = {})
+      # File::expand_path convert the builtin "~/" to the path defined in ENV["HOME"]
+      File.expand_path(options[:dest] || ::HFAM::HOME)
     end
   end
 end
