@@ -13,11 +13,11 @@ For further information: https://github.com/mehdi-farsi/hfam
 
 USAGE:
 
-hfam [-h]
+hfam [-h|--help] [-p|--path]
 
 OPTIONS:
 
 -h  # help
-
+-p  # change the default dotfiles path
 SHELL
 end
