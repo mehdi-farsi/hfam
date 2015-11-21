@@ -2,6 +2,7 @@ module HFAM
   HOME                  = "#{ENV['HOME']}"
   DEFAULT_DOTFILES_PATH = "#{ENV['HOME']}/dotfiles"
 
+  VERSION_MESSAGE = "hfam v#{VERSION}"
   HELP = <<-SHELL
 HFAM - Hidden Files Are Manageable
 

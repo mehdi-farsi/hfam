@@ -17,6 +17,10 @@ module HFAM
           options[:path] = p
         end
 
+        opts.on("-v", "--version") do |v|
+          options[:version] = ::HFAM::VERSION_MESSAGE
+        end
+
       end
     begin
       o.parse!

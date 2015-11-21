@@ -16,6 +16,14 @@ module HFAM
       metadata[:help]
     end
 
+    def version_option?
+      !!metadata[:version]
+    end
+
+    def version_message
+      metadata[:version]
+    end
+
     def metadata
       self[:metadata]
     end
