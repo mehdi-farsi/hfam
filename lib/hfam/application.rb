@@ -14,9 +14,9 @@ module HFAM
     end
 
     def run
-      # dsl = ::HFAM::DSL.new(@payload).tokenize
+      dsl = ::HFAM::DSL.new(@payload).tokenize
 
-      # @command_set.dispatch_commands(@payload)
+      @command_set.dispatch_commands(@payload)
     end
   end
 end
