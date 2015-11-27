@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+# Unlink dead symlink
+# A dead symlink is a link that the target cannot be reached
