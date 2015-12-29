@@ -29,10 +29,6 @@ Check if `ruby` is installed:
 ?> gem install hfam
 ```
 
-I recommend you to put all your `dotfiles` in a Git repository named `dotfiles`.
-
-clone your repo and add a file named `.hfamconfig`.
-
 ###Usage
 
 Example
