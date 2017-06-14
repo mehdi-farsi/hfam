@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# Unlink dead symlink
+# A dead symlink is a link that the target cannot be reached
+
+require "fileutils"
+require "pathname"
+
+# Get all hidden file at root or a specified path
+# For each files:
+# => check if it's a symlink
+# => try to reach the real path
+# => check if the target exists
+# => if not remove the symlink
