@@ -8,7 +8,7 @@
 
 The main advantage of this tool is that you can easily move your `dotfiles` from a machine to another one. Then, with only one command, you can configure your environment.
 
-###Prerequisites
+### Prerequisites
 
 you need to install `ruby`:
 
@@ -23,13 +23,13 @@ Check if `ruby` is installed:
 ?> ruby --version
 ```
 
-###Install
+### Install
 
 ```shell
 ?> gem install hfam
 ```
 
-###Usage
+### Usage
 
 Example
 
@@ -41,7 +41,7 @@ Example
      |- .hfamconfig
 ```
 
-####Options
+#### Options
 
 Option `-h --help`
 
@@ -79,7 +79,7 @@ Symlink: ln -s /Users/mehdi/Documents/dotfiles/testpath /Users/zoidberg/Document
 > The path set by --path option is the default symlink target path.
 > use the DSL symlink option `:dest` to override this path.
 
-####Hfamconfig
+#### hfamconfig
 
 `hfam` works with a `.hfamconfig` file. This config file provide an intuitive DSL for managing your dotfiles.
 
@@ -92,7 +92,7 @@ For the following examples, let's say that the following environment variables a
 
 Now, let's have look to the `.hfamconfig` DSL.
 
-#####Symlink
+##### Symlink
 
 The `symlink` command creates a symlink with the source file passed as argument. The symlink target is created in `$HOME/.target`.
 
@@ -134,7 +134,7 @@ Symlink: ln -s /Users/mehdi/dotfiles/gitignore /Users/zoidberg/apps/my_app/.giti
 > lrwxr-xr-x  1 lol  cat 27B Nov 11 16:35 .gitconfig -> /Users/zoidberg/dotfiles/gitconfig
 > ```
 
-#####Source
+##### Source
 
 The `source` command creates a symlink using the file passed as argument and source the symlink target. The symlink target file is defined at `$HOME/.target`.
 
